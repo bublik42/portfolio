@@ -1,0 +1,39 @@
+$title-bar-height: 20px;
+$title-bar-button-size: 10px;
+$title-bar-vertical-padding: 3px;
+
+// overriding solarized styles
+html.dark {
+  .title-bar {
+    position: relative;
+    background-color: #ccc;
+    width: 100%;
+    height: $title-bar-height - $title-bar-vertical-padding * 2;
+    padding: $title-bar-vertical-padding 0;
+    text-align: center;
+    color: black;
+    font-size: 10px;
+
+    .title-bar-button {
+      width: $title-bar-button-size;
+      height: $title-bar-button-size;
+      border-radius: $title-bar-button-size;
+
+      position: absolute;
+      top: ($title-bar-height - $title-bar-button-size) / 2;
+
+      &.red {
+        background-color: red;
+        left: $title-bar-button-size / 2;
+      }
+      &.yellow {
+        background-color: yellow;
+        left: $title-bar-button-size + ($title-bar-button-size / 2) * 2;
+      }
+      &.green {
+        background-color: green;
+        left: $title-bar-button-size * 2 + ($title-bar-button-size / 2) * 3;
+      }
+    }
+  }
+}
