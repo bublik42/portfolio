@@ -1,0 +1,14 @@
+{
+  "name": "portfolio",
+  "version": "1.0.0",
+  "description": "Genki Sugimoto's portfolio",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Genki Sugimoto",
+  "license": "ISC",
+  "dependencies": {
+    "josh": "0.0.1"
+  }
+}
