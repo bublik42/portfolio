@@ -1,0 +1,19 @@
+{
+  "name": "portfolio",
+  "version": "0.0.0",
+  "authors": [
+    "Genki Sugimoto <cfhoyuk.reccos.nelg@gmail.com>"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "josh": "~0.2.10"
+  }
+}

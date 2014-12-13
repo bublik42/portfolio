@@ -8,9 +8,6 @@
   },
   "author": "Genki Sugimoto",
   "license": "ISC",
-  "dependencies": {
-    "josh": "0.0.1"
-  },
   "devDependencies": {
     "browserify": "^7.0.0",
     "gulp": "^3.8.10",
