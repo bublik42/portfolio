@@ -3,6 +3,15 @@
   "version": "1.0.0",
   "description": "Genki Sugimoto's portfolio",
   "main": "index.js",
+  "browser": {
+    "josh-history": "./bower_components/josh/js/history.js",
+    "josh-killring": "./bower_components/josh/js/killring.js",
+    "josh-readline": "./bower_components/josh/js/readline.js",
+    "josh-input": "./bower_components/josh/js/input.js",
+    "josh-shell": "./bower_components/josh/js/shell.js",
+    "josh-pathhandler": "./bower_components/josh/js/pathhandler.js",
+    "josh-example": "./bower_components/josh/js/example.js"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },

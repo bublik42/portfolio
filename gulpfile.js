@@ -10,5 +10,5 @@ gulp.task('browserify', function() {
   bundleStream
     .pipe(source('./js/main.js'))
     .pipe(streamify(uglify()))
-    .pipe(gulp.dest('./build/main.js'))
+    .pipe(gulp.dest('./build'))
 });
