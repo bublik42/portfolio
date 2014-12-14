@@ -1,3 +1,5 @@
+$base0:     #839496;
+
 $title-bar-height: 20px;
 $title-bar-button-size: 10px;
 $title-bar-vertical-padding: 3px;
@@ -34,6 +36,17 @@ html.dark {
         background-color: green;
         left: $title-bar-button-size * 2 + ($title-bar-button-size / 2) * 3;
       }
+    }
+  }
+
+  a.command {
+    color: $base0;
+    text-decoration: underline;
+    cursor: pointer;
+    &:before,
+    &:after {
+      display: inline;
+      content: '`';
     }
   }
 }
