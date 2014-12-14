@@ -1,6 +1,8 @@
 var history = Josh.History({ key: 'JOSH.history' });
+var readline = Josh.ReadLine({ history: history });
 var shell = Josh.Shell({
   history: history,
+  readline: readline,
   prompt: '$'
 });
 
@@ -19,3 +21,10 @@ shell.setCommandHandler('hello', {
 });
 
 shell.activate();
+
+// make commands clickable
+$('#shell-panel').delegate('a.command', 'click', function() {
+  var cmd = $(this).text();
+  readline.setLine({ text: cmd, cursor: cmd.length });
+  readline.acceptLine();
+});

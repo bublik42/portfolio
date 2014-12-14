@@ -14,6 +14,6 @@
     "tests"
   ],
   "dependencies": {
-    "josh": "~0.2.10"
+    "josh": "https://github.com/Genki-S/josh.js.git#66665224a5a0d2a3027341c4015570d863f4266f"
   }
 }
