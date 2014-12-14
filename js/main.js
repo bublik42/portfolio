@@ -17,7 +17,7 @@ shell.setCommandHandler('welcome', {
       '',
       'Tip: you can click commands if you don\'t like typing',
       '',
-      'Are you hiring? Please try: <a class="command">hire jp</a> or <a class="command">hire us</a>'
+      '<span class="hiring">Are you hiring? Please try: <a class="command">hire jp</a> or <a class="command">hire us</a></span>'
     ].join('<br>');
     callback(response);
   }
