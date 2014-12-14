@@ -21,6 +21,17 @@ shell.setCommandHandler('welcome', {
   }
 });
 
+shell.setCommandHandler('who', {
+  description: 'tell you who I am',
+  exec: function(cmd, args, callback) {
+    response = [
+      'Name: Genki Sugimoto',
+      'Job: Graduate Student',
+    ].join('<br>');
+    callback(response);
+  }
+});
+
 // override help command
 shell.setCommandHandler('help', {
   exec: function(cmd, args, callback) {
