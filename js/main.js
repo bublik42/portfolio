@@ -27,6 +27,7 @@ shell.setCommandHandler('who', {
     response = [
       'Name: Genki Sugimoto',
       'Job: Graduate Student',
+      'Motto: I code, therfore I am.',
     ].join('<br>');
     callback(response);
   }
