@@ -142,3 +142,8 @@ function executeCommand(cmd) {
 
 // welcome command
 executeCommand('welcome');
+
+// for smartphones
+$('#button-help').click(function() {
+  executeCommand('help');
+});
