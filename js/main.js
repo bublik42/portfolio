@@ -29,7 +29,7 @@ shell.setCommandHandler('who', {
     response = [
       'Name: Genki Sugimoto',
       'Job: Graduate Student of Waseda University (1st year)',
-      'Motto: I code, therfore I am.',
+      'Motto: I code, therefore I am.',
     ].join('<br>');
     callback(response);
   }
