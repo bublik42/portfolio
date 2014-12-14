@@ -6,7 +6,7 @@ var shell = Josh.Shell({
   prompt: '$'
 });
 
-shell.setCommandHandler('hello', {
+shell.setCommandHandler('welcome', {
   exec: function(cmd, args, callback) {
     response = [
       'Hello, this is Genki Sugimoto.',
@@ -25,6 +25,13 @@ shell.activate();
 // make commands clickable
 $('#shell-panel').delegate('a.command', 'click', function() {
   var cmd = $(this).text();
+  executeCommand(cmd);
+});
+
+function executeCommand(cmd) {
   readline.setLine({ text: cmd, cursor: cmd.length });
   readline.acceptLine();
-});
+}
+
+// welcome command
+executeCommand('welcome');
