@@ -28,7 +28,7 @@ shell.setCommandHandler('who', {
   exec: function(cmd, args, callback) {
     response = [
       'Name: Genki Sugimoto',
-      'Job: Graduate Student',
+      'Job: Graduate Student of Waseda University (1st year)',
       'Motto: I code, therfore I am.',
     ].join('<br>');
     callback(response);
