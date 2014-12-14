@@ -15,7 +15,9 @@ shell.setCommandHandler('welcome', {
       'Try <a class="command">help</a> to find out what you can do here.',
       'Enjoy :)',
       '',
-      'Tip: you can click commands if you don\'t like typing'
+      'Tip: you can click commands if you don\'t like typing',
+      '',
+      'Are you hiring? Please try: <a class="command">hire jp</a> or <a class="command">hire us</a>'
     ].join('<br>');
     callback(response);
   }
@@ -41,6 +43,32 @@ shell.setCommandHandler('contact', {
       'GitHub: <a href="https://github.com/Genki-S">Genki-S</a>',
       'Twitter: <a href="https://twitter.com/GenkiSugimoto">GenkiSugimoto</a>, <a href="https://twitter.com/GenkiSugimotoJP">GenkiSugimotoJP</a>',
     ].join('<br>');
+    callback(response);
+  }
+});
+
+shell.setCommandHandler('hire', {
+  description: 'Hire me!',
+  exec: function(cmd, args, callback) {
+    var arg = args[0];
+    var response = '';
+    if (arg === 'jp') {
+      response = [
+        'Thank you for being interested in me.',
+        'Let me visit you because I want to know what you do, how you do, and why you do.',
+        'Please don\'t hesitate to contact me, any method is OK.',
+        'Try: <a class="command">contact</a>'
+      ].join('<br>');
+    } else if (arg === 'us') {
+      response = [
+        'Wow, really? I\'m interested in working in the U.S., thank you!',
+        'If you could support me getting VISA, I will really appreciate it.',
+        'Please don\'t hesitate to contact me, any method is OK.',
+        'Try: <a class="command">contact</a>'
+      ].join('<br>');
+    } else {
+      response = 'Please try: <a class="command">hire jp</a> or <a class="command">hire us</a>';
+    }
     callback(response);
   }
 });
