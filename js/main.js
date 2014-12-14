@@ -7,6 +7,7 @@ var shell = Josh.Shell({
 });
 
 shell.setCommandHandler('welcome', {
+  description: 'show welcome message',
   exec: function(cmd, args, callback) {
     response = [
       'Hello, this is Genki Sugimoto.',
@@ -16,6 +17,28 @@ shell.setCommandHandler('welcome', {
       '',
       'Tip: you can click commands if you don\'t like typing'
     ].join('<br>');
+    callback(response);
+  }
+});
+
+// override help command
+shell.setCommandHandler('help', {
+  exec: function(cmd, args, callback) {
+    helpLines = [];
+    shell.commands().forEach(function(cmd) {
+      var helpLine = '<tr><td><a class="command">' + cmd + '</a></td>';
+      var cmdHandler = shell.getCommandHandler(cmd);
+      if (cmdHandler.description) {
+        helpLine += '<td class="description">' + cmdHandler.description + '</td>';
+      } else {
+        helpLine += '<td></td>';
+      }
+      helpLines.push(helpLine + '</tr>');
+    });
+    helpLines.unshift('<strong>Commands:</strong>');
+    helpLines.unshift('<table class="help">');
+    helpLines.push('</table>');
+    response = helpLines.join('');
     callback(response);
   }
 });
