@@ -47,6 +47,38 @@ shell.setCommandHandler('contact', {
   }
 });
 
+shell.setCommandHandler('works', {
+  description: 'my (proud) works',
+  exec: function(cmd, args, callback) {
+    works = [
+      {
+        title: '<a href="/blog">Blog</a>',
+        description: 'Tips for better tech life'
+      },
+      {
+        title: '<a href="https://github.com/Genki-S/dotfiles">dotfiles</a>',
+        description: 'My lovely settings for vim, tmux, zsh and more.'
+      },
+      {
+        title: '<a href="https://github.com/Genki-S/clicoder">CLI Coder</a>',
+        description: 'Command Line Interface for Online Programming Contests.'
+      },
+      {
+        title: '<a href="https://github.com/Genki-S/foolish">FOOLISH</a>',
+        description: 'Foolish Obtuse OS Leaner\'s Incompetent SHell'
+      }
+    ];
+
+    var lines = [];
+    lines.push('<table>');
+    works.forEach(function(work) {
+      lines.push('<tr><td>' + work.title + '</td><td class="description">' + work.description + '</td></tr>');
+    });
+    lines.push('</table>');
+    callback(lines.join(''));
+  }
+});
+
 shell.setCommandHandler('hire', {
   description: 'Hire me!',
   exec: function(cmd, args, callback) {
