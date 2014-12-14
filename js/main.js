@@ -32,6 +32,18 @@ shell.setCommandHandler('who', {
   }
 });
 
+shell.setCommandHandler('contact', {
+  description: 'show contact information',
+  exec: function(cmd, args, callback) {
+    response = [
+      'Email: <a href="mailto:genki.sugimoto.jp@gmail.com">genki.sugimoto.jp@gmail.com</a>',
+      'GitHub: <a href="https://github.com/Genki-S">Genki-S</a>',
+      'Twitter: <a href="https://twitter.com/GenkiSugimoto">GenkiSugimoto</a>, <a href="https://twitter.com/GenkiSugimotoJP">GenkiSugimotoJP</a>',
+    ].join('<br>');
+    callback(response);
+  }
+});
+
 // override help command
 shell.setCommandHandler('help', {
   exec: function(cmd, args, callback) {
