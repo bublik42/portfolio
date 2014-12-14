@@ -3,7 +3,7 @@ var readline = Josh.ReadLine({ history: history });
 var shell = Josh.Shell({
   history: history,
   readline: readline,
-  prompt: '$'
+  prompt: '<br>$'
 });
 
 shell.setCommandHandler('welcome', {
