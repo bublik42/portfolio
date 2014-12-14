@@ -11,7 +11,7 @@ shell.setCommandHandler('welcome', {
   exec: function(cmd, args, callback) {
     response = [
       'Hello, this is Genki Sugimoto.',
-      'Thank you for your visit.',
+      'Thank you for visiting my site.',
       'Try <a class="command">help</a> to find out what you can do here.',
       'Enjoy :)',
       '',
