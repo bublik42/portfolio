@@ -6,6 +6,10 @@ $title-bar-vertical-padding: 3px;
 
 // overriding solarized styles
 html.dark {
+  #shell-panel {
+    padding: 5px;
+  }
+
   .title-bar {
     position: relative;
     background-color: #ccc;
