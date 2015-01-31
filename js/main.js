@@ -105,6 +105,13 @@ shell.setCommandHandler('hire', {
   }
 });
 
+shell.setCommandHandler('jp', {
+  description: 'Move to Japanese site',
+  exec: function(cmd, args, callback) {
+    location.href = 'http://genkisugimoto.com/jp'
+  }
+});
+
 // override help command
 shell.setCommandHandler('help', {
   exec: function(cmd, args, callback) {
