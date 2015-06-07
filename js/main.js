@@ -56,6 +56,10 @@ shell.setCommandHandler('works', {
         description: 'Tips for better tech life'
       },
       {
+        title: '<a href="/procon">Programming Contest Blog</a>',
+        description: 'Code and explanations of programming contest problem I solved.'
+      },
+      {
         title: '<a href="https://github.com/Genki-S/dotfiles">dotfiles</a>',
         description: 'My lovely settings for vim, tmux, zsh and more.'
       },
