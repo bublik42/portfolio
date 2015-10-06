@@ -9,7 +9,7 @@ var shell = Josh.Shell({
 shell.setCommandHandler('welcome', {
   description: 'show welcome message',
   exec: function(cmd, args, callback) {
-    response = [
+    var response = [
       'Hello, this is Vsevolod Stefkin.',
       'Thank you for visiting my site.',
       'Try <a class="command">help</a> to find out what you can do here.',
@@ -26,7 +26,7 @@ shell.setCommandHandler('welcome', {
 shell.setCommandHandler('who', {
   description: 'tell you who I am',
   exec: function(cmd, args, callback) {
-    response = [
+    var response = [
       'Name: Vsevolod Stefkin',
       'Job: Software Engineer & DevOps at "The Hamon"'
     ].join('<br>');
@@ -37,7 +37,7 @@ shell.setCommandHandler('who', {
 shell.setCommandHandler('contact', {
   description: 'show contact information',
   exec: function(cmd, args, callback) {
-    response = [
+    var response = [
       'Email: <a href="mailto:stefkin.v@gmail.com">stefkin.v@gmail.com</a>',
       'GitHub: <a href="https://github.com/bublik42">bublik42</a>'
     ].join('<br>');
@@ -48,18 +48,18 @@ shell.setCommandHandler('contact', {
 shell.setCommandHandler('works', {
   description: 'my humble contributions',
   exec: function(cmd, args, callback) {
-    works = [
-      {
-        title: '<a href="https://gitlab.com/bublik42/dotfiles">dotfiles</a>',
-        description: 'My settings for nixos, emacs, zsh and more'
-      },
-      {
-        title: '<a href="https://github.com/gogotanaka/Rubype">Rubype</a>',
-        description: 'Ruby contarcts made simple (and mostly useless tbh)'
-      }
-    ];
+    var lines = [],
+        works = [
+          {
+            title: '<a href="https://gitlab.com/bublik42/dotfiles">dotfiles</a>',
+            description: 'My settings for nixos, emacs, zsh and more'
+          },
+          {
+            title: '<a href="https://github.com/gogotanaka/Rubype">Rubype</a>',
+            description: 'Ruby contarcts made simple (and mostly useless tbh)'
+          }
+        ];
 
-    var lines = [];
     lines.push('<table>');
     works.forEach(function(work) {
       lines.push('<tr><td>' + work.title + '</td><td class="description">' + work.description + '</td></tr>');
@@ -72,8 +72,7 @@ shell.setCommandHandler('works', {
 shell.setCommandHandler('hire', {
   description: 'Hire me!',
   exec: function(cmd, args, callback) {
-    var response = '';
-    response = [
+    var response = [
       'Thank you for being interested in me.',
       'Let me visit you because I want to know what you do, how you do, and why you do.',
       'Please don\'t hesitate to contact me, any method is OK.',
@@ -86,7 +85,7 @@ shell.setCommandHandler('hire', {
 // override help command
 shell.setCommandHandler('help', {
   exec: function(cmd, args, callback) {
-    helpLines = [];
+    var helpLines = [];
     shell.commands().forEach(function(cmd) {
       var helpLine = '<tr><td><a class="command">' + cmd + '</a></td>';
       var cmdHandler = shell.getCommandHandler(cmd);
@@ -100,8 +99,7 @@ shell.setCommandHandler('help', {
     helpLines.unshift('<strong>Commands:</strong>');
     helpLines.unshift('<table class="help">');
     helpLines.push('</table>');
-    response = helpLines.join('');
-    callback(response);
+    callback(helpLines.join(''));
   }
 });
 
