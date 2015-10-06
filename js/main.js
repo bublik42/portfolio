@@ -7,35 +7,36 @@ var shell = Josh.Shell({
 });
 
 shell.setCommandHandler('welcome', {
-  description: 'show welcome message',
+  description: 'Shows welcome message that you see at the beggining of a session',
   exec: function(cmd, args, callback) {
     var response = [
       'Hello, this is Vsevolod Stefkin.',
       'Thank you for visiting my site.',
-      'Try <a class="command">help</a> to find out what you can do here.',
-      'Enjoy :)',
+      'Try <a class="command">ls</a> to find out what you can do here.',
+      'Enjoy ( ͡° ͜ʖ ͡°)',
       '',
       'Tip: you can click commands if you don\'t like typing',
       '',
-      '<span class="hiring">Are you hiring? Please try: <a class="command">hire</a></span>'
+      '<span class="hiring">Are you hiring? Please try: <a class="command">hireme</a></span>'
     ].join('<br>');
     callback(response);
   }
 });
 
 shell.setCommandHandler('who', {
-  description: 'tell you who I am',
+  description: 'Shows short summary about me',
   exec: function(cmd, args, callback) {
     var response = [
       'Name: Vsevolod Stefkin',
-      'Job: Software Engineer & DevOps at "The Hamon"'
+      'Job: Software Engineer & DevOps at "The Hamon", Minsk',
+      'Education: 4th year student at FITR BNTU'
     ].join('<br>');
     callback(response);
   }
 });
 
 shell.setCommandHandler('contact', {
-  description: 'show contact information',
+  description: 'Shows contact information',
   exec: function(cmd, args, callback) {
     var response = [
       'Email: <a href="mailto:stefkin.v@gmail.com">stefkin.v@gmail.com</a>',
@@ -46,17 +47,17 @@ shell.setCommandHandler('contact', {
 });
 
 shell.setCommandHandler('works', {
-  description: 'my humble contributions',
+  description: 'Lists my humble contributions and public repos',
   exec: function(cmd, args, callback) {
     var lines = [],
         works = [
           {
             title: '<a href="https://gitlab.com/bublik42/dotfiles">dotfiles</a>',
-            description: 'My settings for nixos, emacs, zsh and more'
+            description: 'My settings for nixos, emacs, zsh and more.'
           },
           {
             title: '<a href="https://github.com/gogotanaka/Rubype">Rubype</a>',
-            description: 'Ruby contarcts made simple (and mostly useless tbh)'
+            description: 'Ruby contarcts made simple.'
           }
         ];
 
@@ -69,21 +70,20 @@ shell.setCommandHandler('works', {
   }
 });
 
-shell.setCommandHandler('hire', {
+shell.setCommandHandler('hireme', {
   description: 'Hire me!',
   exec: function(cmd, args, callback) {
     var response = [
       'Thank you for being interested in me.',
-      'Let me visit you because I want to know what you do, how you do, and why you do.',
-      'Please don\'t hesitate to contact me, any method is OK.',
+      'Please don\'t hesitate to contact, any method is fine.',
       'Try: <a class="command">contact</a>'
     ].join('<br>');
     callback(response);
   }
 });
 
-// override help command
-shell.setCommandHandler('help', {
+shell.setCommandHandler('ls', {
+  description: 'Shows this message',
   exec: function(cmd, args, callback) {
     var helpLines = [];
     shell.commands().forEach(function(cmd) {
