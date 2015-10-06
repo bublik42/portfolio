@@ -1,8 +1,8 @@
 {
   "name": "portfolio",
   "version": "1.0.0",
-  "description": "Genki Sugimoto's portfolio",
-  "main": "index.js",
+  "description": "",
+  "main": "js/main.js",
   "browser": {
     "josh-history": "./bower_components/josh/js/history.js",
     "josh-killring": "./bower_components/josh/js/killring.js",
@@ -14,8 +14,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "Genki Sugimoto",
-  "license": "ISC",
+  "author": "V. Stefkin",
+  "license": "GPL V2",
   "devDependencies": {
     "browserify": "^7.0.0",
     "gulp": "^3.8.10",

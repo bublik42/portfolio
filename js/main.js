@@ -10,14 +10,14 @@ shell.setCommandHandler('welcome', {
   description: 'show welcome message',
   exec: function(cmd, args, callback) {
     response = [
-      'Hello, this is Genki Sugimoto.',
+      'Hello, this is Vsevolod Stefkin.',
       'Thank you for visiting my site.',
       'Try <a class="command">help</a> to find out what you can do here.',
       'Enjoy :)',
       '',
       'Tip: you can click commands if you don\'t like typing',
       '',
-      '<span class="hiring">Are you hiring? Please try: <a class="command">hire jp</a> or <a class="command">hire us</a></span>'
+      '<span class="hiring">Are you hiring? Please try: <a class="command">hire</a></span>'
     ].join('<br>');
     callback(response);
   }
@@ -27,9 +27,8 @@ shell.setCommandHandler('who', {
   description: 'tell you who I am',
   exec: function(cmd, args, callback) {
     response = [
-      'Name: Genki Sugimoto',
-      'Job: Graduate Student of Waseda University (1st year)',
-      'Motto: I code, therefore I am.',
+      'Name: Vsevolod Stefkin',
+      'Job: Software Engineer & DevOps at "The Hamon"'
     ].join('<br>');
     callback(response);
   }
@@ -39,37 +38,24 @@ shell.setCommandHandler('contact', {
   description: 'show contact information',
   exec: function(cmd, args, callback) {
     response = [
-      'Email: <a href="mailto:genki.sugimoto.jp@gmail.com">genki.sugimoto.jp@gmail.com</a>',
-      'GitHub: <a href="https://github.com/Genki-S">Genki-S</a>',
-      'Twitter: <a href="https://twitter.com/GenkiSugimoto">GenkiSugimoto</a>, <a href="https://twitter.com/GenkiSugimotoJP">GenkiSugimotoJP</a>',
+      'Email: <a href="mailto:stefkin.v@gmail.com">stefkin.v@gmail.com</a>',
+      'GitHub: <a href="https://github.com/bublik42">bublik42</a>'
     ].join('<br>');
     callback(response);
   }
 });
 
 shell.setCommandHandler('works', {
-  description: 'my (proud) works',
+  description: 'my humble contributions',
   exec: function(cmd, args, callback) {
     works = [
       {
-        title: '<a href="/blog">Blog</a>',
-        description: 'Tips for better tech life'
+        title: '<a href="https://gitlab.com/bublik42/dotfiles">dotfiles</a>',
+        description: 'My settings for nixos, emacs, zsh and more'
       },
       {
-        title: '<a href="/procon">Programming Contest Blog</a>',
-        description: 'Code and explanations of programming contest problem I solved.'
-      },
-      {
-        title: '<a href="https://github.com/Genki-S/dotfiles">dotfiles</a>',
-        description: 'My lovely settings for vim, tmux, zsh and more.'
-      },
-      {
-        title: '<a href="https://github.com/Genki-S/clicoder">CLI Coder</a>',
-        description: 'Command Line Interface for Online Programming Contests.'
-      },
-      {
-        title: '<a href="https://github.com/Genki-S/foolish">FOOLISH</a>',
-        description: 'Foolish Obtuse OS Leaner\'s Incompetent SHell'
+        title: '<a href="https://github.com/gogotanaka/Rubype">Rubype</a>',
+        description: 'Ruby contarcts made simple (and mostly useless tbh)'
       }
     ];
 
@@ -86,33 +72,14 @@ shell.setCommandHandler('works', {
 shell.setCommandHandler('hire', {
   description: 'Hire me!',
   exec: function(cmd, args, callback) {
-    var arg = args[0];
     var response = '';
-    if (arg === 'jp') {
-      response = [
-        'Thank you for being interested in me.',
-        'Let me visit you because I want to know what you do, how you do, and why you do.',
-        'Please don\'t hesitate to contact me, any method is OK.',
-        'Try: <a class="command">contact</a>'
-      ].join('<br>');
-    } else if (arg === 'us') {
-      response = [
-        'Wow, really? I\'m interested in working in the U.S., thank you!',
-        'If you could support me getting VISA, I will really appreciate it.',
-        'Please don\'t hesitate to contact me, any method is OK.',
-        'Try: <a class="command">contact</a>'
-      ].join('<br>');
-    } else {
-      response = 'Please try: <a class="command">hire jp</a> or <a class="command">hire us</a>';
-    }
+    response = [
+      'Thank you for being interested in me.',
+      'Let me visit you because I want to know what you do, how you do, and why you do.',
+      'Please don\'t hesitate to contact me, any method is OK.',
+      'Try: <a class="command">contact</a>'
+    ].join('<br>');
     callback(response);
-  }
-});
-
-shell.setCommandHandler('jp', {
-  description: 'Move to Japanese site',
-  exec: function(cmd, args, callback) {
-    location.href = 'http://genkisugimoto.com/jp'
   }
 });
 
