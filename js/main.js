@@ -24,19 +24,30 @@ shell.setCommandHandler('welcome', {
 });
 
 shell.setCommandHandler('who', {
-  description: 'Shows short summary about me',
+  description: 'Displays short summary about me',
   exec: function(cmd, args, callback) {
     var response = [
       'Name: Vsevolod Stefkin',
-      'Job: Software Engineer & DevOps at "The Hamon", Minsk',
-      'Education: 4th year student at FITR BNTU'
+      'Job: Software Engineer at "The Hamon", Minsk',
+      'Education: undergraduate at FITR BNTU (4th year)'
     ].join('<br>');
     callback(response);
   }
 });
 
+shell.setCommandHandler('skils', {
+    description: 'Displays information about my skills and experience',
+    exec: function(cmd, args, callback) {
+        var response = [
+            'Programming Languages: Ruby, Clojure, Haskell, C/C++, Javascript',
+            'Databases: MySql, T-SQL, Redis, Elasticsearch',
+        ];
+        callback(response);
+    }
+})
+
 shell.setCommandHandler('contact', {
-  description: 'Shows contact information',
+  description: 'Displays contact information',
   exec: function(cmd, args, callback) {
     var response = [
       'Email: <a href="mailto:stefkin.v@gmail.com">stefkin.v@gmail.com</a>',
