@@ -92,20 +92,21 @@ shell.setCommandHandler('hireme', {
   }
 });
 
+var helpLineFor = function(cmd) {
+    var description = shell.getCommandHandler(cmd).description;
+    if (description){
+        return '<td class="description">' + description + '</td>';
+    } else {
+        return '<td></td>';
+    }
+};
+
 shell.setCommandHandler('ls', {
   description: 'Shows this message',
   exec: function(cmd, args, callback) {
-    var helpLines = [];
-    shell.commands().forEach(function(cmd) {
-      var helpLine = '<tr><td><a class="command">' + cmd + '</a></td>';
-      var cmdHandler = shell.getCommandHandler(cmd);
-      if (cmdHandler.description) {
-        helpLine += '<td class="description">' + cmdHandler.description + '</td>';
-      } else {
-        helpLine += '<td></td>';
-      }
-      helpLines.push(helpLine + '</tr>');
-    });
+    var helpLines = shell.commands().reduce(function(memo, cmd) {
+      memo.push(helpLineFor(cmd));
+    }, '');
     helpLines.unshift('<strong>Commands:</strong>');
     helpLines.unshift('<table class="help">');
     helpLines.push('</table>');
