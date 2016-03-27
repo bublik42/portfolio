@@ -92,7 +92,7 @@ shell.setCommandHandler('hireme', {
   }
 });
 
-var helpLineFor = function(cmd) {
+var descFor = function(cmd){
     var description = shell.getCommandHandler(cmd).description;
     if (description){
         return '<td class="description">' + description + '</td>';
@@ -101,11 +101,15 @@ var helpLineFor = function(cmd) {
     }
 };
 
+var helpLineFor = function(cmd) {
+    return '<tr><td><a class="command">' + cmd + '</a></td>' + descFor(cmd) + '</tr>';
+};
+
 shell.setCommandHandler('ls', {
   description: 'Shows this message',
   exec: function(cmd, args, callback) {
     var helpLines = shell.commands().reduce(function(memo, cmd) {
-      memo.push(helpLineFor(cmd));
+      return memo.push(helpLineFor(cmd));
     }, []);
     helpLines.unshift('<strong>Commands:</strong>');
     helpLines.unshift('<table class="help">');
