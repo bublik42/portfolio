@@ -7,7 +7,7 @@ var shell = Josh.Shell({
 });
 
 shell.setCommandHandler('welcome', {
-  description: 'Shows welcome message that you see at the beggining of a session',
+  description: 'Welcome message that you see at the beggining of your session',
   exec: function(cmd, args, callback) {
     var response = [
       'Hello, this is Vsevolod Stefkin.',
@@ -22,19 +22,19 @@ shell.setCommandHandler('welcome', {
 });
 
 shell.setCommandHandler('who', {
-  description: 'Displays short summary about me',
+  description: 'Short summary about me',
   exec: function(cmd, args, callback) {
     var response = [
       'Name: Vsevolod Stefkin',
       'Job: Software Engineer at "The Hamon", Minsk',
-      'Education: undergraduate at FITR BNTU (4th year)'
+      'Education: undergraduate at BNTU FITR (4th year)'
     ].join('<br>');
     callback(response);
   }
 });
 
 shell.setCommandHandler('skills', {
-    description: 'Displays information about my skills and experience',
+    description: 'Info about my skills and experience',
     exec: function(cmd, args, callback) {
         var response = [
             'Programming Languages: Ruby, Clojure, Haskell, C/C++, Javascript',
@@ -45,7 +45,7 @@ shell.setCommandHandler('skills', {
 })
 
 shell.setCommandHandler('contact', {
-  description: 'Displays contact information',
+  description: 'Contact information',
   exec: function(cmd, args, callback) {
     var response = [
       'Email: <a href="mailto:stefkin.v@gmail.com">stefkin.v@gmail.com</a>',
