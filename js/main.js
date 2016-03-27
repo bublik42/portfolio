@@ -33,13 +33,13 @@ shell.setCommandHandler('who', {
   }
 });
 
-shell.setCommandHandler('skils', {
+shell.setCommandHandler('skills', {
     description: 'Displays information about my skills and experience',
     exec: function(cmd, args, callback) {
         var response = [
             'Programming Languages: Ruby, Clojure, Haskell, C/C++, Javascript',
-            'Databases: MySql, T-SQL, Redis, Elasticsearch',
-        ];
+            'Databases: MySql, T-SQL, Redis, Elasticsearch'
+        ].join('<br>');
         callback(response);
     }
 })
