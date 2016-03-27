@@ -49,7 +49,8 @@ shell.setCommandHandler('contact', {
   exec: function(cmd, args, callback) {
     var response = [
       'Email: <a href="mailto:stefkin.v@gmail.com">stefkin.v@gmail.com</a>',
-      'GitHub: <a href="https://github.com/bublik42">bublik42</a>'
+      'GitHub: <a href="https://github.com/stefkin">stefkin</a>',
+      'Gitlab: <a href="https://gitlab.com/bublik42">bublik42</a>'
     ].join('<br>');
     callback(response);
   }
