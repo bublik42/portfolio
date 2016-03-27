@@ -15,9 +15,7 @@ shell.setCommandHandler('welcome', {
       'Try <a class="command">ls</a> to find out what you can do here.',
       'Enjoy ( ͡° ͜ʖ ͡°)',
       '',
-      'Tip: you can click commands if you don\'t like typing',
-      '',
-      '<span class="hiring">Are you hiring? Please try: <a class="command">hireme</a></span>'
+      'Tip: you can click commands if you don\'t like typing'
     ].join('<br>');
     callback(response);
   }
