@@ -18,4 +18,4 @@ gulp.task('sass', function() {
         .pipe(gulp.dest('./build/css'));
 });
 
-gulp.task('default', ['browserify, sass']);
+gulp.task('default', ['browserify', 'sass']);
