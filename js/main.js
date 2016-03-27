@@ -106,7 +106,7 @@ shell.setCommandHandler('ls', {
   exec: function(cmd, args, callback) {
     var helpLines = shell.commands().reduce(function(memo, cmd) {
       memo.push(helpLineFor(cmd));
-    }, '');
+    }, []);
     helpLines.unshift('<strong>Commands:</strong>');
     helpLines.unshift('<table class="help">');
     helpLines.push('</table>');
