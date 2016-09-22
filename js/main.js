@@ -86,7 +86,8 @@ shell.setCommandHandler('hireme', {
     var response = [
       'Thank you for being interested in me.',
       'Please don\'t hesitate to contact, any method is fine.',
-      'Try: <a class="command">contact</a>'
+      'Try: <a class="command">contact</a>',
+      '<a href="./cv.html">CV</a>'
     ].join('<br>');
     callback(response);
   }
